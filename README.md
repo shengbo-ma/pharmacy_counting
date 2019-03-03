@@ -2,7 +2,7 @@
 
 # Table of Contents
 1. [Abstract](README.md#abstract)
-2. [Data Structures & Algorithms](README.md#data-structure-&-algorithm)
+2. [Data Structure & Algorithm](README.md#data-structure-&-algorithm)
 3. [Tests](README.md#tests)
 
 
