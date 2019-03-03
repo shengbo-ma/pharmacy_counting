@@ -110,7 +110,7 @@ A defaulted test as required.
 ```
 ### Test 2: 
 Test 2 is to check if there are missing values in the input file.
-The records with incompleted values with be skipped when calculating total costs.
+The records with incompleted values will be printed and skipped when calculating total costs.
 
 ```shell
 Unexpected Record:1000000002,Garcia,Maria,,200
