@@ -1,11 +1,46 @@
 # Solution for the pharmacy-counting project
 
-## Instruction
+# Table of Contents
+1. [Abstract](README.md#abstract)
+2. [Data Structures & Algorithms](README.md#data-structures-&-algorithm)
+3. [Tests](README.md#tests)
 
-The source file is named pharmacy_count.py, which is located at "./src/pharmacy_count.py".
-The sys package is imported in pharmacy_count.py to get command-line arguments.
 
-### Data Structure
+# Absract
+
+This project is the solution to the [coding challenge](https://github.com/InsightDataScience/pharmacy_counting) from [Insight Data Engineering Program](http://insightdataengineering.com). The module is coded based on Python3.
+
+## Depedencies
+
+* Python3 (Required)
+
+## Project Strcuture
+
+├── README.md 
+├── run.sh
+├── src
+│   └── pharmacy-counting.py
+├── input
+│   └── itcont.txt
+├── output
+|   └── top_cost_drug.txt
+├── insight_testsuite
+    └── run_tests.sh
+    └── tests
+        └── test_1
+        |   ├── input
+        |   │   └── itcont.txt
+        |   |__ output
+        |   │   └── top_cost_drug.txt
+        ├── your-own-test_1
+            ├── input
+            │   └── your-own-input-for-itcont.txt
+            |── output
+                └── top_cost_drug.txt
+
+# Data Structure & Algorithm
+
+## Data Structure
 Three classes are defined in the module.
 
 OrderRecord:
@@ -51,9 +86,20 @@ Print the list to output file.
 ### Test 1: 
 
 A defaulted test as required.
-
+```shell
+[PASS]: test_1 top_cost_drug.txt
+```
 ### Test 2: 
-
 Test 2 is to check if there are missing values in the input file.
 The records with incompleted values with be skipped when calculating total costs.
+
+```shell
+Unexpected Record:1000000002,Garcia,Maria,,200
+Unexpected Record:
+Unexpected Record:Maria,CHLORPROMAZINE,2000
+Unexpected Record:1000000005,Smith,David,BENZTROPINE MESYLATE,-1500
+[PASS]: test_2 top_cost_drug.txt
+```
+
+
 
