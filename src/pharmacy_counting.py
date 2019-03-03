@@ -1,4 +1,6 @@
-#!/bin/env python
+
+
+
 # -*- coding: utf-8 -*-
 """
     File: pharmacy_counting.py
@@ -9,32 +11,45 @@
         This module is use only default data structures in python to meet the requirements of coding challenge.
     
 """
+import sys
 class OrderRecord():
     '''
     This class is used to store a single record in the inputed order records.
     This class will be used by the DrugCostNode class and the DrugCostList class as the basic input data.
     '''
     def __init__(self, record=None):
-            
+        """
+        Create a node instance given a record.
+        Check if the record in completed. If not, raise ValueError.
+        """
         if type(record) == str:
             items = record.strip().split(',')
             if (type(items) == list and len(items) == 5):
-            
+                
+                if '' in items:# find missing values in record
+                    raise ValueError
+                    
                 self.id = items[0]
                 self.last_name = items[1]
-                self.first_name = items[2]
+                self.first_name = items[2]                
                 self.drug_name = items[3]
-                if '.' in items[4]: # the total cost is float
-                    self.cost = float(items[4])
-                else:
-                    self.cost = int(items[4])
-                return
 
-        self.id = ''
-        self.last_name = ''
-        self.first_name = ''
-        self.drug_name = ''
-        self.cost = 0
+                try:  
+                    if '.' in items[4]:
+                        self.cost = float(items[4])
+                    else:
+                        self.cost = int(items[4])
+                except ValueError as e:
+                    raise
+                    
+                if self.cost <= 0: 
+                    raise ValueError
+                    
+            else: 
+                raise ValueError
+
+        else:
+            raise ValueError
         
 class DrugCostNode():
     """This class serves as the node of the DrugCostList class.
@@ -138,10 +153,20 @@ class DrugCostList():
         with open(path, 'w') as f_out:
             f_out.write(self.__str__())
             
-import sys
+
 
 if __name__ == "__main__":
 
+    """
+    Creat an instance of DrugCostList class, namely dcl, to store the results of drug total costs.
+    
+    Read the input file line by line to update dcl. For each line, or record:
+    * Store the information to a instance of OrderRecord class, namely record.
+    * Update dcl with record.
+    
+    When all records have been read, sort dcl in descending order based on total costs.
+    Print the list to output file.
+    """
     input_file = sys.argv[1]
     output_file = sys.argv[2]
 
@@ -149,9 +174,12 @@ if __name__ == "__main__":
     dcl = DrugCostList();
     with open(input_file, 'r') as f_in:
 
-        for line in f_in.readlines()[1:]:
-            record=OrderRecord(line)
-            dcl.update_from_record(record)
+        for line in f_in.readlines()[1:]: # skip the header
+            try:
+                record=OrderRecord(line)
+                dcl.update_from_record(record)
+            except ValueError as e:
+                print("Unexpected Record:"+line.strip())
             
     
     dcl.sort_by_cost()

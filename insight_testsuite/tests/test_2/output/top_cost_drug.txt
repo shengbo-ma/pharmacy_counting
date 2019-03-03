@@ -1,0 +1,3 @@
+drug_name,num_prescriber,total_cost
+CHLORPROMAZINE,1,1000
+AMBIEN,1,100
