@@ -2,7 +2,7 @@
 
 # Table of Contents
 1. [Abstract](README.md#abstract)
-2. [Data Structure & Algorithm](README.md#data-structure-&-algorithm)
+2. [Data Structure & Algorithm](README.md#data-structure-and-algorithm)
 3. [Tests](README.md#tests)
 
 
@@ -41,7 +41,7 @@ This project is the solution to the [coding challenge](https://github.com/Insigh
 ```
 
 
-# Data Structure & Algorithm
+# Data Structure and Algorithm
 
 ## Data Structure
 Three classes are defined in the module.
