@@ -50,6 +50,14 @@ Three classes are defined in the module.
     This class is used to store a single record in the inputed order records.
     This class will be used by the DrugCostNode class and the DrugCostList class as the basic input data.
     
+    Attributes:
+    
+        id (str): ID of the prescriber.
+        last_name (str): Last name of the prescriber.
+        first_name (str): First name of the prescriber. 
+        drug_name (str): Name of the prescribed drug.
+        cost (int or float): Cost of the drug.
+    
 * DrugCostNode:
     This class serves as the node of the DrugCostList class.
     The nodes, or instance of this class, store the name of the drug, the individuals who prescribed the drug and the total cost.
@@ -57,9 +65,7 @@ Three classes are defined in the module.
     Attributes:
     
         drug_name (str): Name of the drug.
-        
         total_cost (float): Total cost of the drug
-        
         prescribers (set): People who prescribed the drug, uniqued by (first_name, last_name)
         
 * DrugCostList:
