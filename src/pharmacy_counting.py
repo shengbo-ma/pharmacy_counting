@@ -153,8 +153,8 @@ if __name__ == "__main__":
             
     dcl = DrugCostList();
     with open(input_file, 'r') as f_in:
-        next(f_in)
-        for line in f_in.readlines():
+
+        for line in f_in.readlines()[1:]:
             record=OrderRecord(line)
             dcl.update_from_record(record)
             
