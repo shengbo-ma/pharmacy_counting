@@ -64,11 +64,11 @@ DrugCostList:
         list_nodes (list): a list of nodes, which are instances of the DrugCostNode class.
 
 ### Algorithm
-Searching:
+#### Indexing by drug name in DrugCostList
 The searching method in DrugCostList is find_drug(self, drug_name). 
 Linear search is applied here.
 
-Sorting:
+#### Sorting by total cost in DrugCostList
 The sorting method in DrugCostList is sort_by_cost(self).
 The built-in sorted() is applied here.
         
