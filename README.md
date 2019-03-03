@@ -53,14 +53,20 @@ Three classes are defined in the module.
 * DrugCostNode:
     This class serves as the node of the DrugCostList class.
     The nodes, or instance of this class, store the name of the drug, the individuals who prescribed the drug and the total cost.
-    ** Attributes:
+    
+    Attributes:
+    
         drug_name (str): Name of the drug.
+        
         total_cost (float): Total cost of the drug
+        
         prescribers (set): People who prescribed the drug, uniqued by (first_name, last_name)
         
 * DrugCostList:
     This class is a list of instances of the DrugCostNode class.
-    ** Attributes:
+    
+    Attributes:
+    
         list_nodes (list): a list of nodes, which are instances of the DrugCostNode class.
 
 ### Algorithm
