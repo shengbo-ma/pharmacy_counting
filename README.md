@@ -2,7 +2,7 @@
 
 # Table of Contents
 1. [Abstract](README.md#abstract)
-2. [Data Structures & Algorithms](README.md#data-structures-&-algorithm)
+2. [Data Structures & Algorithms](README.md#data-structure-&-algorithm)
 3. [Tests](README.md#tests)
 
 
@@ -15,6 +15,7 @@ This project is the solution to the [coding challenge](https://github.com/Insigh
 * Python3 (Required)
 
 ## Project Strcuture
+```shell
 
 ├── README.md 
 ├── run.sh
@@ -37,6 +38,8 @@ This project is the solution to the [coding challenge](https://github.com/Insigh
             │   └── your-own-input-for-itcont.txt
             |── output
                 └── top_cost_drug.txt
+```
+
 
 # Data Structure & Algorithm
 
