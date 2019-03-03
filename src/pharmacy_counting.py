@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[5]:
-
-
 # -*- coding: utf-8 -*-
 """
     File: pharmacy_counting.py
