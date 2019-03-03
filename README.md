@@ -78,13 +78,13 @@ Three classes are defined in the module.
 ### Algorithm
 #### Indexing by drug name in DrugCostList
 
-    find_drug(self, drug_name)
+    DrugCostList.find_drug(self, drug_name)
 
 Linear search is applied here.
 
 #### Sorting by total cost in DrugCostList
 
-    sort_by_cost(self)
+    DrugCostList.sort_by_cost(self)
     
 The built-in sorted() is applied here.
         
