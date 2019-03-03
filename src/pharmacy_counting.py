@@ -1,3 +1,32 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[179]:
+
+
+import random
+
+dd = []
+with open(big_file, 'r') as f_in:
+    #next(f_in)
+    dd =random.sample(f_in.readlines(),10)
+    with open(input_file, 'w') as f_out:
+        f_out.write('id,prescriber_last_name,prescriber_first_name,drug_name,drug_cost\n')
+        for line in dd:
+            f_out.write(line)
+
+#for d in dd: print(d.strip())
+
+
+# In[180]:
+
+
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all" 
+
+
+# In[181]:
+
 
 # -*- coding: utf-8 -*-
 """
@@ -24,7 +53,10 @@ class OrderRecord():
                 self.last_name = items[1]
                 self.first_name = items[2]
                 self.drug_name = items[3]
-                self.cost = float(items[4])
+                if '.' in items[4]:
+                    self.cost = float(items[4])
+                else:
+                    self.cost = int(items[4])
                 return
 
         self.id = ''
@@ -125,15 +157,52 @@ class DrugCostList():
         Print the drug information in a format of "drug_name,num_prescriber,total_cost"            
         """
         
-        results = "drug_name,num_prescriber,total_cost\n"
+        results = "drug_name,num_prescriber,total_cost"
         for node in self.list_nodes:
-            results += (node.drug_name + ',' + str(len(node.prescribers)) + ',' + str(round(node.total_cost,2)) + '\n')
+            results += ('\n' + node.drug_name + ',' + str(len(node.prescribers)) + ',' + str(round(node.total_cost,2)))
         return results
     
     def write_to_file(self, path):
         
         with open(path, 'w') as f_out:
             f_out.write(self.__str__())
-            
-    
+
+
+# In[182]:
+
+
+# test 1
+input_file = "./input/itcont.txt"
+output_file = "./output/top_cost_drug.txt"
+big_file = "C:\Coding\GitHub\de_cc_data.txt"
+
+dcl = DrugCostList();
+with open(input_file, 'r') as f_in:
+    next(f_in)
+    for line in f_in.readlines():
+        record=OrderRecord(line)
+        dcl.update_from_record(record)
+        #print(dcl)
+#print(dcl)
+dcl.sort_by_cost()
+#print(dcl)
+dcl.write_to_file(output_file)
+
+
+# In[183]:
+
+
+print(dcl)
+
+
+# In[188]:
+
+
+round(1,5)
+
+
+# In[ ]:
+
+
+
 
