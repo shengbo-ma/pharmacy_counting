@@ -46,11 +46,11 @@ This project is the solution to the [coding challenge](https://github.com/Insigh
 ## Data Structure
 Three classes are defined in the module.
 
-OrderRecord:
+* OrderRecord:
     This class is used to store a single record in the inputed order records.
     This class will be used by the DrugCostNode class and the DrugCostList class as the basic input data.
     
-DrugCostNode:
+* DrugCostNode:
     This class serves as the node of the DrugCostList class.
     The nodes, or instance of this class, store the name of the drug, the individuals who prescribed the drug and the total cost.
     Attributes:
@@ -58,7 +58,7 @@ DrugCostNode:
         total_cost (float): Total cost of the drug
         prescribers (set): People who prescribed the drug, uniqued by (first_name, last_name)
         
-DrugCostList:
+* DrugCostList:
     This class is a list of instances of the DrugCostNode class.
     Attributes:
         list_nodes (list): a list of nodes, which are instances of the DrugCostNode class.
